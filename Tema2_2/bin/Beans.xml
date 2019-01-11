@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="vehicul1" class="Vehicul">
+		<constructor-arg index="0" value="1500" />
+		<constructor-arg index="1" value="300" />
+	</bean>	
+	<bean id="vehicul2" class="Vehicul">
+		<constructor-arg index="0" value="123" />
+		<constructor-arg index="1" value="200" />
+	</bean>
+	<bean id="vehicul3" class="Vehicul">
+		<property name="pret" value="500" />
+		<property name="vitezaMaxima" value="200" />
+	</bean>
+	<bean id="vehicul4" class="Vehicul">
+		<property name="pret" value="900" />
+		<property name="vitezaMaxima" value="100" />
+	</bean>
+	<bean id="vehicul5" class="Vehicul">
+		<property name="pret" value="600" />
+		<property name="vitezaMaxima" value="250" />
+	</bean>
+
+
+	<bean id="Autoturism1" class="Autoturism" parent="vehicul1">
+		<constructor-arg index="0" value="BMW" />
+		<constructor-arg index="1" value="2010" />
+	</bean>
+	<bean id="Autoturism2" class="Autoturism" parent="vehicul2">
+		<constructor-arg index="0" value="Ford" />
+		<constructor-arg index="1" value="2011" />
+	</bean>
+
+	<bean id="Motocicleta1" class="Motocicleta" parent="vehicul3">
+		<property name="tip" value="Teren" />
+	</bean>
+	
+	<bean id="Motocicleta2" class="Motocicleta" parent="vehicul5">
+		<property name="tip" value="Clasica" />
+	</bean>
+
+	<bean id="Tir1" class="Tir" parent="vehicul4">
+		<property name="incarcatura" value="500" />
+	</bean>	
+
+	
+</beans>
